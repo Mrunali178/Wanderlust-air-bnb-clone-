@@ -99,7 +99,7 @@ app.delete("/listings/:id",wrapAsync(async(req,res)=>{
     res.redirect("/listings");
 }));
 
-//Reviews
+//Reviews post route
 
 app.post("/listings/:id/reviews",wrapAsync(async(req,res)=>{
     let {id} = req.params;
