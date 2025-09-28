@@ -108,7 +108,8 @@ app.post("/listings/:id/reviews",wrapAsync(async(req,res)=>{
     listing.reviews.push(newReview);
     await newReview.save();
     await listing.save();
-    res.send("Review added successfully");
+    // res.send("Review added successfully");
+    res.redirect(`/listings/${listing._id}`);
 }));
 
 // app.get('/testListing',async(req,res)=>{
