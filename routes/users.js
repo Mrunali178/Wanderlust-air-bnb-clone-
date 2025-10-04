@@ -4,7 +4,8 @@ const wrapAsync = require("../utils/wrapAsync.js");
 const ExpressError = require("../utils/ExpressError.js");
 const User = require("../models/user.js");
 const passport = require("passport");
-// const { userSchema } = require("../schema.js");
+const { saveRedirectUrl} = require("../middileware.js");
+
 
 
 
@@ -49,11 +50,11 @@ router.get("/login",(req,res)=>{
     res.render("users/login.ejs");
 });
 
-router.post("/login",passport.authenticate("local",{failureFlash:true,failureRedirect:"/login"}), (req,res)=>{
+router.post("/login",saveRedirectUrl,passport.authenticate("local",{failureFlash:true,failureRedirect:"/login"}), (req,res)=>{
     req.flash("success","Welcome back!");
     // let redirectUrl = req.session.returnTo || "/listings";
     // delete req.session.returnTo;
-    res.redirect("/listings");
+    res.redirect(res.locals.redirectUrl || "/listings");
 });
 
 router.get("/logout",(req,res)=>{
