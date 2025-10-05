@@ -20,7 +20,7 @@
       
     </div>
   </div>
-  
+
   <% if(currentUser && currentUser._id.equals(listing.owner._id)){ %>
   <div class="btns">
     <a
@@ -36,6 +36,7 @@
 <% } %>
   <div class="col-8 offset-3 mb-3">
     <hr />
+    <% if(currentUser){ %>
     <h4>Leave a review</h4>
     <form
       action="/listings/<%= listing._id %>/reviews"
@@ -71,18 +72,19 @@
     </form>
 
     <hr />
+    <% } %>
     <p><b>All Reviews</b></p>
     <div class="row">
-      <% for(let rev of listing.reviews){ %>
+      <% for(let review of listing.reviews){ %>
       <div class="card col-5 ms-3 mb-3">
         <div class="card-body">
-          <h5 class="card-title">Jhone Doe</h5>
+          <h5 class="card-title">@<%= review.author.username %></h5>
           <p class="card-text">
-            <%= rev.comment %> <br />
-            <%= rev.rating %> stars
+            <%= review.comment %> <br />
+            <%= review.rating %> stars
           </p>
         </div>
-        <form class="mb-3" method="POST" action="/listings/<%= listing._id %>/reviews/<%= rev._id %>?_method=DELETE">
+        <form class="mb-3" method="POST" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
           <button class="btn btn-sm btn-dark">Delete</button>
         </form>
       </div>
