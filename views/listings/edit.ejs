@@ -18,8 +18,15 @@
             </div>
 
             <div class="mb-3">
-                Original Image:<br>
-                <img src="<%= originalImageUrl %>"alt="Listing image"/>
+                <% if (originalImageUrl&&originalImageUrl.includes("cloudinary.com")) { %>
+                    Original Image:<br>
+                    <img src="<%= originalImageUrl %>"alt="Listing image"/>
+                <%  }else{ %>
+                    Original Image:<br>
+                    <img src="<%= originalImageUrl %>"alt="Listing image" style="width: 200px; height:200px"/>
+
+                <% } %>
+                
             </div>
             
             <div class="mb-3">
