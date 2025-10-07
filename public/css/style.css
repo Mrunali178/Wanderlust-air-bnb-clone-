@@ -21,6 +21,11 @@ body{
 
 .nav-link {
   color: #222 !important;
+  margin-left: 1rem;
+}
+
+.navbar-collapse {
+  background-color: white;
 }
 
 /* footer */
