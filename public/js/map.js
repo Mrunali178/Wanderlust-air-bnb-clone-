@@ -2,6 +2,14 @@ maptilersdk.config.apiKey = mapToken;
 const map = new maptilersdk.Map({
   container: "map", // container's id or the HTML element to render the map
   style: maptilersdk.MapStyle.STREETS,
-  center: [75.8577, 22.7196], // starting position [lng, lat]
-  zoom: 11, // starting zoom
+  center: listing.geometry.coordinates, // starting position [lng, lat]
+  zoom: 8, // starting zoom
 });
+
+const marker = new maptilersdk.Marker({ color: 'red' })
+  .setLngLat(listing.geometry.coordinates)
+  .setPopup(
+    new maptilersdk.Popup({ offset: 25 })
+    .setHTML(`<h4>${listing.location}</h4> <p>Location for booking</p>`))
+  
+  .addTo(map);
