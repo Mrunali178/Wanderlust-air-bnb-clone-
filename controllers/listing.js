@@ -1,4 +1,8 @@
 const Listing = require("../models/listing.js");
+const maptilerClient = require("@maptiler/client");
+const myToken = process.env.MAP_TOKEN;
+maptilerClient.config.apiKey = myToken;
+
 
 module.exports.index = async (req,res)=>{
     let allListings = await Listing.find();
@@ -22,12 +26,17 @@ module.exports.showListing = async(req,res)=>{
 }
 
 module.exports.createListing = async (req,res)=>{
+    const result = await maptilerClient.geocoding.forward(req.body.listing.location);
+    console.log(result.features[0].geometry);
+
     let url = req.file.path;
     let filename = req.file.filename;
     const newListings= new Listing(req.body.listing);
     newListings.owner=req.user._id;
     newListings.image={url,filename};
-    await newListings.save();
+    newListings.geometry=result.features[0].geometry;
+    let sdavedListing = await newListings.save();
+    console.log(sdavedListing);
     req.flash("success","Successfully made a new listing");
     res.redirect("/listings");
 };
