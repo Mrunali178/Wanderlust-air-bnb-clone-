@@ -122,4 +122,28 @@
       }
     }
   });
+const urlParams = new URLSearchParams(window.location.search);
+  const currentCategory = urlParams.get('category'); // null if no category
+
+  // Loop through all filters
+  const filters = document.querySelectorAll('#filters .filter');
+
+  filters.forEach(filter => {
+    const link = filter.querySelector('a');
+    const hrefCategory = new URL(link.href, window.location.origin).searchParams.get('category');
+
+    if (currentCategory) {
+      // If URL has category, highlight the matching filter
+      if (hrefCategory === currentCategory) {
+        filter.classList.add('active');
+      }
+    } else {
+      // If URL has no category, highlight Trending
+      if (hrefCategory === 'trending') {
+        filter.classList.add('active');
+      }
+    }
+  });
+
+
 </script>
