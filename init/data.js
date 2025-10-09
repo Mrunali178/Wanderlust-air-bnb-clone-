@@ -10,6 +10,7 @@ const sampleListings = [
     price: 2500,
     location: "Goa, Goa",
     country: "India",
+    category:"beaches",
   },
   {
     title: "Houseboat Stay in Alleppey",
@@ -22,6 +23,7 @@ const sampleListings = [
     price: 1800,
     location: "Alleppey, Kerala",
     country: "India",
+    category:"amazing_pools",
   },
   {
     title: "Mountain Cabin in Manali",
@@ -34,6 +36,7 @@ const sampleListings = [
     price: 1500,
     location: "Manali, Himachal Pradesh",
     country: "India",
+    category:"artic",
   },
   {
     title: "Luxury Tent in Jaisalmer Desert",
@@ -46,6 +49,7 @@ const sampleListings = [
     price: 2000,
     location: "Jaisalmer, Rajasthan",
     country: "India",
+    category:"camping",
   },
   {
     title: "Tea Estate Bungalow in Munnar",
@@ -58,6 +62,7 @@ const sampleListings = [
     price: 2200,
     location: "Munnar, Kerala",
     country: "India",
+    category:"farms",
   },
   {
     title: "Private Beach Cottage in Andaman Islands",
@@ -70,6 +75,7 @@ const sampleListings = [
     price: 3500,
     location: "Havelock Island, Andaman & Nicobar Islands",
     country: "India",
+    category:"beaches",
   },
   {
     title: "Hilltop Homestay in Darjeeling",
@@ -82,6 +88,7 @@ const sampleListings = [
     price: 1300,
     location: "Darjeeling, West Bengal",
     country: "India",
+    category:"iconic_city",
   },
   {
     title: "Royal Haveli in Jaipur",
@@ -94,6 +101,7 @@ const sampleListings = [
     price: 2800,
     location: "Jaipur, Rajasthan",
     country: "India",
+    category:"castles",
   },
   {
     title: "Riverside Cottage in Rishikesh",
@@ -106,6 +114,7 @@ const sampleListings = [
     price: 1200,
     location: "Rishikesh, Uttarakhand",
     country: "India",
+    category:"amazing_pools",
   },
   {
     title: "Lakeside Retreat in Udaipur",
@@ -118,6 +127,7 @@ const sampleListings = [
     price: 3000,
     location: "Udaipur, Rajasthan",
     country: "India",
+    category:"iconic_city",
   },
   {
     title: "Coconut Grove Stay in Varkala",
@@ -130,6 +140,7 @@ const sampleListings = [
     price: 1700,
     location: "Varkala, Kerala",
     country: "India",
+    category:"farms",
   },
   {
     title: "Eco Jungle Lodge in Jim Corbett",
@@ -142,6 +153,7 @@ const sampleListings = [
     price: 1900,
     location: "Jim Corbett, Uttarakhand",
     country: "India",
+    category:"camping",
   },
   {
     title: "Snow View Chalet in Gulmarg",
@@ -154,6 +166,7 @@ const sampleListings = [
     price: 3200,
     location: "Gulmarg, Jammu & Kashmir",
     country: "India",
+    category:"artic"
   },
   {
     title: "Tropical Island Villa in Lakshadweep",
@@ -166,6 +179,7 @@ const sampleListings = [
     price: 5000,
     location: "Agatti Island, Lakshadweep",
     country: "India",
+    category:"beaches",
   },
   {
     title: "Colonial Bungalow in Ooty",
@@ -178,6 +192,7 @@ const sampleListings = [
     price: 1800,
     location: "Ooty, Tamil Nadu",
     country: "India",
+    category:"mountains"
   },
   {
     title: "Cultural Homestay in Varanasi",
@@ -190,6 +205,7 @@ const sampleListings = [
     price: 1000,
     location: "Varanasi, Uttar Pradesh",
     country: "India",
+    category:"rooms",
   },
   {
     title: "Adventure Camp in Spiti Valley",
@@ -202,6 +218,7 @@ const sampleListings = [
     price: 1600,
     location: "Spiti Valley, Himachal Pradesh",
     country: "India",
+    category:"camping",
   },
   {
     title: "Luxury Cottage in Coorg",
@@ -214,6 +231,7 @@ const sampleListings = [
     price: 2300,
     location: "Coorg, Karnataka",
     country: "India",
+    category:"rooms",
   },
   {
     title: "Backwater Resort in Kumarakom",
@@ -226,6 +244,8 @@ const sampleListings = [
     price: 2800,
     location: "Kumarakom, Kerala",
     country: "India",
+    category:"beaches",
+  
   },
   {
     title: "Seaside Bungalow in Pondicherry",
@@ -238,6 +258,7 @@ const sampleListings = [
     price: 2000,
     location: "Pondicherry, Puducherry",
     country: "India",
+    category:"iconic_city",
   },
 ];
 
