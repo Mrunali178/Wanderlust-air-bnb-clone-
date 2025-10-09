@@ -46,8 +46,8 @@ DesiStay is a full-stack, responsive web application inspired by Airbnb, designe
 1.  **Clone the Repository**
 
     ```bash
-    git clone [https://github.com/Mrunali178/Wanderlust-air-bnb-clone-.git]
-    cd DesiStay-Your-Go-To-Home
+    git clone https://github.com/Mrunali178/Wanderlust-air-bnb-clone-.git
+    cd Wanderlust-air-bnb-clone
     ```
 
 2.  **Install Dependencies**
