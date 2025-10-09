@@ -17,11 +17,11 @@ body {
 .fa-compass {
   color: #fe424d;
   font-size: 2rem;
+  margin-left: 2rem;
 }
 
 .nav-link {
   color: #222 !important;
-  margin-left: 1rem;
 }
 
 .navbar-collapse {
@@ -156,6 +156,7 @@ body {
 
 .filter.active {
   opacity: 1;
+  text-decoration: underline 2px black;
 }
 
 .filter p {
