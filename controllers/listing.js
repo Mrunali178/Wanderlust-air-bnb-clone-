@@ -4,10 +4,50 @@ const myToken = process.env.MAP_TOKEN;
 maptilerClient.config.apiKey = myToken;
 
 
+// module.exports.index = async (req,res)=>{
+//     let allListings = await Listing.find();
+//     res.render("listings/index.ejs",{allListings});
+// }
+
 module.exports.index = async (req,res)=>{
-    let allListings = await Listing.find();
+    let query = {};
+    let search_term = "";
+    if(req.query.category && req.query.category.toLowerCase() !== "trending"){
+        query.category = req.query.category.toLowerCase();
+        search_term = `category: ${req.query.category}`;
+    }
+
+    // The search takes precedence and searches across relevant fields.
+    if(req.query.q){
+        const q = req.query.q.trim();
+        const regex = new RegExp(q, 'i'); // 'i' for case-insensitive search
+        
+        // Search across title, description, location, country
+        query = {
+            $or: [
+                { title: { $regex: regex } },
+                { description: { $regex: regex } },
+                { location: { $regex: regex } },
+                { country: { $regex: regex } },
+            ]
+        };
+        search_term = `search: ${q}`;
+    }
+
+    let allListings = await Listing.find(query);
+    if(allListings.length === 0){
+        let message = `No listings found`;
+        if(search_term){
+             message = `No listings found for ${search_term}`;
+        }
+        req.flash("error",message);
+        return res.redirect("/listings");
+    }
+    
     res.render("listings/index.ejs",{allListings});
 }
+
+
 
 module.exports.renderNewForm = (req,res)=>{
 
