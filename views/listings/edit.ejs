@@ -43,17 +43,35 @@
                 </div>
 
                 <div class="mb-3 col-md-8">
+                    <label for="category" class="form-label">Category: </label>
+                    <select name="listing[category]" id="category" class="form-control" required>
+                        <% const categories = ["trending", "rooms", "iconic_city", "beaches", "mountains", "amazing_pools", "artic", "camping", "farms", "castles"]; %>
+                        <option value="" disabled>Select a Category</option>
+                        <% for (let cat of categories) { %>
+                            <option value="<%= cat %>" <%= listing.category && listing.category === cat ? 'selected' : '' %>>
+                                <% // Capitalize first letter of each word (e.g., 'iconic_city' -> 'Iconic City') %>
+                                <%= cat.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') %>
+                            </option>
+                        <% } %>
+                    </select>
+                    <div class="invalid-feedback">Please select a category!</div>
+            </div>
+
+
+        <div class="row">
+            <div class="mb-3 col-md-4">
+                <label for="location" class="form-label">Location: </label>
+                <input name="listing[location]" value="<%= listing.location %>" class="form-control" type="text" required>
+                <div class="invalid-feedback">Please enter location!</div>
+            </div>
+
+            <div class="mb-3 col-md-8">
                     <label for="country" class="form-label">Country: </label>
                     <input name="listing[country]" value="<%= listing.country %>" type="text" class="form-control" required>
                     <div class="invalid-feedback">Please enter country!</div>
-                </div>
             </div>
-
-            <div>
-                <label for="location" class="form-label">Location: </label>
-                <input name="listing[location]" value="<%= listing.location %>" type="text" required>
-                <div class="invalid-feedback">Please enter location!</div>
-            </div>
+        </div>
+            
             
             <button class="btn btn-dark edit-btn mt-3 mb-5">UPDATE</button>
         </form>

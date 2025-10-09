@@ -4,14 +4,21 @@
     <!-- <br><br> -->
     <h3>Create a new post</h3>
 
-    <form method="Post" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+    <form
+      method="Post"
+      action="/listings"
+      novalidate
+      class="needs-validation"
+      enctype="multipart/form-data"
+    >
       <div class="mb-3">
         <label for="title" class="form-label">Title:</label>
         <input
           name="listing[title]"
           placeholder="Give a catchy title"
           type="text"
-          class="form-control" required
+          class="form-control"
+          required
         />
         <div class="valid-feedback">Title looks good!</div>
         <div class="invalid-feedback">Please enter a title</div>
@@ -24,7 +31,8 @@
           name="listing[description]"
           placeholder="enter description"
           rows="10"
-          cols="35" required
+          cols="35"
+          required
         ></textarea>
         <div class="invalid-feedback">Please enter a description</div>
       </div>
@@ -46,9 +54,47 @@
             name="listing[price]"
             placeholder="12000"
             type="number"
-            class="form-control" required
+            class="form-control"
+            required
           />
           <div class="invalid-feedback">Please enter a valid price</div>
+        </div>
+
+        <div class="mb-3 col-md-8">
+          <label for="category" class="form-label">Category</label>
+          <select
+            name="listing[category]"
+            id="category"
+            class="form-control"
+            required
+          >
+            <option value="" disabled selected>Select a Category</option>
+            <option value="trending">Trending</option>
+            <option value="rooms">Rooms</option>
+            <option value="iconic_city">Iconic City</option>
+            <option value="beaches">Beaches</option>
+            <option value="mountains">Mountains</option>
+            <option value="amazing_pools">Amazing Pools</option>
+            <option value="artic">Artic</option>
+            <option value="camping">Camping</option>
+            <option value="farms">Farms</option>
+            <option value="castles">Castles</option>
+          </select>
+          <div class="invalid-feedback">Please select a category</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="location" class="form-label">Location</label>
+          <input
+            name="listing[location]"
+            placeholder="enter location"
+            type="text"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Please enter a location</div>
         </div>
 
         <div class="mb-3 col-md-8">
@@ -57,24 +103,13 @@
             name="listing[country]"
             placeholder="India"
             type="text"
-            class="form-control" required
+            class="form-control"
+            required
           />
           <div class="invalid-feedback">Please enter a Country</div>
         </div>
       </div>
 
-      <div class="mb-3">
-        <label for="location" class="form-label">Location</label>
-        <input
-          name="listing[location]"
-          placeholder="enter location"
-          type="text"
-          class="form-control" required
-        />
-        <div class="invalid-feedback">Please enter a location</div>
-      </div>
-
-      
       <button class="btn btn-dark add-btn mt-3 mb-5">ADD</button>
 
       <!-- <br><br>  -->
