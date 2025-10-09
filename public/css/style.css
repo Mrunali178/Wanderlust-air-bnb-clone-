@@ -157,9 +157,6 @@ body {
 .filter.active {
   opacity: 1;
 }
-.filter.active i {
-  color: #000;
-}
 
 .filter p {
   font-size: 0.8rem;
