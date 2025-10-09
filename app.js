@@ -28,7 +28,7 @@ app.use(methodOverride("_method"));
 app.engine("ejs",ejsMate);
 
 const sessionOptions={
-    secret:"mysuperseceretkey",
+    secret: process.env.SESSION_SECRET,
     resave:false,
     saveUninitialized:true,
     cockies:{
