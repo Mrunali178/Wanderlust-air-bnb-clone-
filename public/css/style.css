@@ -157,6 +157,7 @@ body {
 .filter.active {
   opacity: 1;
   text-decoration: underline 2px black;
+  text-underline-offset: 4px;
 }
 
 .filter p {
