@@ -59,6 +59,11 @@
         <a class="nav-link" href="/login"><b>Log In</b></a>
         <% } %>
         <% if(currentUser){ %>
+        
+          <a class="nav-link" href="#">
+            <i class="fa-solid fa-circle-user"></i>
+            <%= currentUser.username %>
+          </a>
         <a class="nav-link" href="/logout"><b>Log Out</b></a>
         <% } %>
       </div>
