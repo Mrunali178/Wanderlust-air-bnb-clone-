@@ -66,10 +66,6 @@ const sessionOptions={
     }
 };
 
-// app.get('/',(req,res)=>{
-//     res.send("root is working");
-// });
-
 app.use(session(sessionOptions));
 app.use(flash());
 app.use(passport.initialize());
@@ -87,7 +83,9 @@ app.use((req,res,next)=>{
     next();
 })
 
-
+app.get('/',(req,res)=>{
+    res.redirect("/listings");
+});
 //routes
 app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
